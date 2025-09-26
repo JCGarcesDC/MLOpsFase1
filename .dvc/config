@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = ../D:\OneDrive\Escritorio\Maestria IA\Trimestre 4\MLOps
