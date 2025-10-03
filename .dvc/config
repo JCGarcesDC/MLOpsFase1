@@ -1,4 +1,8 @@
 [core]
     remote = myremote
 ['remote "myremote"']
+<<<<<<< HEAD
     url = gdrive://root/MLOPS
+=======
+    url = ../D:\OneDrive\Escritorio\Maestria IA\Trimestre 4\MLOps
+>>>>>>> 1856e231eddfe140bd61c9361b28ac1184f49f93
