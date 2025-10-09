@@ -1,0 +1,35 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "mlops"
+version = "0.0.1"
+description = "Este proyecto servir\u00e1 para poner en pr\u00e1ctica la metodolog\u00eda de MLOps para desarrollo de proyectos de Machine Learning, el cual se dividir\u00e1 en distintas fases las cuales constar\u00e1n de las distintas etapas de un producto de ML."
+authors = [
+  { name = "Equipo 53" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10.0"
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+known_first_party = ["mlops"]
+force_sort_within_sections = true
+
+
