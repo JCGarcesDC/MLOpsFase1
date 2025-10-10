@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/danie/MLOpsFase1/notebooks/mlruns/0/d0e3196fd4074328883eb10ab64a3226/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d0e3196fd4074328883eb10ab64a3226
+run_name: vaunted-donkey-677
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760054993163
+status: 1
+tags: []
+user_id: danie
