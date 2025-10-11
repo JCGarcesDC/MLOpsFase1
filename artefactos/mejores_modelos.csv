@@ -1,0 +1,8 @@
+Modelo,Mejores Parámetros,F1-Score (Train),Accuracy (Train),F1-Score (Test),Accuracy (Test)
+Regresión Logística,"{'clasificador__C': 1.0, 'clasificador__penalty': 'l1', 'clasificador__solver': 'saga'}",0.9576505564925621,0.9575835475578406,0.9177155192772342,0.9179487179487179
+Árbol de Decisión,"{'clasificador__criterion': 'entropy', 'clasificador__max_depth': 10, 'clasificador__max_leaf_nodes': 20, 'clasificador__min_samples_leaf': 1, 'clasificador__min_samples_split': 2}",0.9678490046349731,0.967866323907455,0.9381108220458282,0.9384615384615385
+Random Forest,"{'clasificador__criterion': 'entropy', 'clasificador__max_depth': 10, 'clasificador__min_samples_leaf': 1, 'clasificador__min_samples_split': 2, 'clasificador__n_estimators': 200}",0.9993573488982964,0.9993573264781491,0.9539339960589001,0.9538461538461539
+XGBoost,"{'clasificador__colsample_bytree': 0.7, 'clasificador__learning_rate': 0.1, 'clasificador__max_depth': 5, 'clasificador__n_estimators': 200, 'clasificador__subsample': 0.7}",1.0,1.0,0.9693439098144673,0.9692307692307692
+KNN,"{'clasificador__metric': 'manhattan', 'clasificador__n_neighbors': 3, 'clasificador__weights': 'distance'}",1.0,1.0,0.9040694750431059,0.9051282051282051
+MLP,"{'clasificador__activation': 'logistic', 'clasificador__alpha': 0.001, 'clasificador__hidden_layer_sizes': (150, 150), 'clasificador__learning_rate': 'constant', 'clasificador__solver': 'adam'}",0.9515449546999947,0.9517994858611826,0.9045365332744674,0.9051282051282051
+SVM,"{'clasificador__C': 10.0, 'clasificador__gamma': 0.1, 'clasificador__kernel': 'rbf'}",0.9974294952401561,0.9974293059125964,0.9187148720186441,0.9179487179487179
