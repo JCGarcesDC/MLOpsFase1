@@ -1,6 +1,6 @@
 # Manipulación de datos
 import pandas as pd
-from typing import Text, Optional
+from typing import Text, Optional, List, Tuple, Union
 from IPython.display import display, Markdown
 
 # Cargar los datos ===============================================================================================================
@@ -32,31 +32,55 @@ def cargar_dataframe(path_data: Text) -> Optional[pd.DataFrame]:
         return None # Retorna None si la carga falla
 
 # Generar variables numericas y categoricas ===============================================================================================================
-def crear_listas_variables():
+def crear_listas_variables(
+    to_lower: bool = False,
+    exclude_mixed: bool = False
+) -> Tuple[List[str], List[str], str]:
     """
-    Crea y devuelve tres objetos (listas y una cadena de texto) que contienen
-    los nombres de las variables clasificadas por su tipo y la variable objetivo
-    para un conjunto de datos específico.
+    Crea y devuelve listas de nombres de variables, permitiendo configurar
+    el caso de las letras (minúsculas) y la exclusión de una columna.
 
     Parámetros (Input):
-        Esta función no requiere ningún parámetro de entrada.
+        to_lower (bool): Si es True, convierte todos los nombres de las variables a minúsculas.
+                         (Default: False)
+        exclude_mixed (bool): Si es True, elimina 'mixed_type_col' de la lista
+                              de variables numéricas. (Default: False)
 
     Retorno (Output):
-        tuple: Una tupla que contiene los nombres de las tres variables creadas
-               en el siguiente orden:
+        tuple: Una tupla que contiene las tres variables creadas:
                1. variables_numericas (list): Nombres de las variables cuantitativas.
                2. variables_categoricas (list): Nombres de las variables cualitativas/categóricas.
                3. variable_objetivo (str): Nombre de la variable dependiente o objetivo.
     """
-    # Crear una lista con las variables númericas (cuantitativas)
-    variables_numericas = ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE', 'mixed_type_col']
+    # Nombres base (siempre se inician con los originales)
+    nombres_numericos_base = ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE', 'mixed_type_col']
+    nombres_categoricos_base = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS']
+    nombre_objetivo_base = 'NObeyesdad'
 
-    # Crear una lista con las variables cualitativas (categóricas)
-    variables_categoricas = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS']
+    # --- Lógica de Exclusión ---
+    
+    # Aplicar exclusión solo si 'exclude_mixed' es True
+    if exclude_mixed:
+        # Usamos una comprensión de lista para incluir solo los nombres que NO son 'mixed_type_col'
+        variables_numericas = [
+            col for col in nombres_numericos_base if col != 'mixed_type_col'
+        ]
+    else:
+        # Si no se excluye, usamos la lista base completa
+        variables_numericas = nombres_numericos_base.copy() # Usar .copy() para evitar modificar la lista base
 
-    # Definir la variable objetivo (dependiente)
-    variable_objetivo = 'NObeyesdad'
+    # Las listas categóricas y objetivo no tienen lógica de exclusión aquí
+    variables_categoricas = nombres_categoricos_base.copy()
+    variable_objetivo = nombre_objetivo_base
 
+    # --- Lógica de Minúsculas ---
+    
+    # Aplicar minúsculas a todas las listas si 'to_lower' es True
+    if to_lower:
+        variables_numericas = [col.lower() for col in variables_numericas]
+        variables_categoricas = [col.lower() for col in variables_categoricas]
+        variable_objetivo = variable_objetivo.lower()
+    
     return variables_numericas, variables_categoricas, variable_objetivo
 
 # Función para analisis Inicial ===============================================================================================================
