@@ -1,9 +1,11 @@
 # Manipulación de datos
 import pandas as pd
 import numpy as np
-from typing import Tuple, Any, List
+from typing import Tuple, Any, List, Dict, Text
 from IPython.display import display, Markdown
 import math
+import joblib
+import os
 
 # Ignorar warning
 import warnings
@@ -37,10 +39,9 @@ from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, Confusio
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from typing import Dict
 
 
-
+# Obtener los parametros de los modelos ===============================================================================================================
 def obtener_configuraciones_modelos() -> List[Dict[str, Any]]:
     """
     Define y devuelve una lista de diccionarios, donde cada diccionario contiene
@@ -139,6 +140,7 @@ def obtener_configuraciones_modelos() -> List[Dict[str, Any]]:
 
     return configuracion_modelos
 
+# Entrenar cada modelo y obtener los mejores resultados ===============================================================================================================
 def optimizar_y_comparar_modelos(
     config_modelos: list,
     preprocesador,
@@ -242,3 +244,46 @@ def optimizar_y_comparar_modelos(
   display(pd.DataFrame(resultados_optimizados).sort_values(by='F1-Score (Test)', ascending=False))
 
   return pd.DataFrame(resultados_optimizados), mejores_pipelines
+
+
+# Almacenar los mejores modelos y sus configuraciones ===============================================================================================================
+def guardar_artefactos_ml(
+    df_resultados: pd.DataFrame,
+    pipelines: Dict[str, Any],
+    base_path: Text = '../../artefactos/',
+    results_name: Text = 'mejores_modelos.csv',
+    pipelines_name: Text = 'pipelines_optimizados.joblib'
+) -> None:
+    """
+    Guarda los resultados de la optimización y los modelos (pipelines) entrenados.
+
+    Crea un directorio de destino si no existe.
+
+    Args:
+        df_resultados (pd.DataFrame): DataFrame con la tabla comparativa de modelos.
+        pipelines (Dict[str, Any]): Diccionario que contiene los mejores pipelines entrenados.
+        base_path (str): Directorio base donde se guardarán los archivos.
+        results_name (str): Nombre del archivo CSV para los resultados.
+        pipelines_name (str): Nombre del archivo joblib para los pipelines.
+
+    Returns:
+        None
+    """
+    # 1. Crear el directorio de destino si no existe
+    os.makedirs(base_path, exist_ok=True)
+
+    # Rutas completas
+    ruta_resultados = os.path.join(base_path, results_name)
+    ruta_pipelines = os.path.join(base_path, pipelines_name)
+
+    # 2. Guardar el DataFrame de resultados (como CSV)
+    try:
+        df_resultados.to_csv(ruta_resultados, index=False)
+    except Exception as e:
+        print(f"Error al guardar resultados CSV")
+
+    # 3. Guardar el diccionario de pipelines (usando joblib)
+    try:
+        joblib.dump(pipelines, ruta_pipelines)
+    except Exception as e:
+        print(f"Error al guardar pipelines (joblib)")
