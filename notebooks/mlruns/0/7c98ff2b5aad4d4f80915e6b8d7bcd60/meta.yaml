@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/danie/MLOpsFase1/notebooks/mlruns/0/7c98ff2b5aad4d4f80915e6b8d7bcd60/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7c98ff2b5aad4d4f80915e6b8d7bcd60
+run_name: colorful-conch-809
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760051884477
+status: 1
+tags: []
+user_id: danie

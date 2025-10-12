@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/630002249221256555/725b48e450a345d1a52634b8f5564599/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '630002249221256555'
+lifecycle_stage: active
+run_id: 725b48e450a345d1a52634b8f5564599
+run_name: mysterious-doe-447
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760068502071
+status: 1
+tags: []
+user_id: danie
