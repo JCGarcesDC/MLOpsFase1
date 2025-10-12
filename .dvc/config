@@ -1,7 +1,4 @@
 [core]
     remote = gcs
-['remote "storage"']
-    url = gdrive://1hcBwuriz9AYB61TQAgAoCrpx4uO24k4A
-    gdrive_use_service_account = true
 ['remote "gcs"']
     url = gs://obesityestimation-mna-mlops-53
