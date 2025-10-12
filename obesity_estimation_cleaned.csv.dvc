@@ -1,0 +1,5 @@
+outs:
+- md5: 9421107a458b3028ba68ce2352c26b8e
+  size: 155246
+  hash: md5
+  path: obesity_estimation_cleaned.csv
