@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/630002249221256555/7e88cf6ea8004d05a0a10b4be899db3e/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '630002249221256555'
+lifecycle_stage: active
+run_id: 7e88cf6ea8004d05a0a10b4be899db3e
+run_name: brawny-ray-902
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760067569046
+status: 1
+tags: []
+user_id: danie
