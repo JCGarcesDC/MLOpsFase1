@@ -15,8 +15,8 @@ def save_csv_and_push(df, file_path="../data/obesity_estimation_cleaned.csv", co
     df.to_csv(p, index=False)
     
     # 1. Añadir archivos para el commit
-    #run(f'dvc add "{p.as_posix()}"')
-    #run(f'git add "{p.as_posix()}.dvc"')
+    run(f'dvc add "{p.as_posix()}"')
+    run(f'git add "{p.as_posix()}.dvc"')
 
     # 2. Hacer commit (si hay cambios)
     try:
