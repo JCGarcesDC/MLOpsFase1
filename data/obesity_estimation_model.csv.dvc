@@ -1,5 +1,5 @@
 outs:
-- md5: 1ff175faa41115eb7cea38136f8d2265
-  size: 262550
+- md5: 85aaccc38bba07b473fdf5717ec79f18
+  size: 214629
   hash: md5
   path: obesity_estimation_model.csv
