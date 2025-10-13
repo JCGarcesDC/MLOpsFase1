@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+/obesity_estimation_cleaned.csv
+=======
 # Data
 #/data/
 
@@ -210,3 +213,4 @@ __pycache__/
 .env
 .venv/
 venv/
+>>>>>>> c8ef8725c2f6ed486d738f9cd356cb9a539d6567
