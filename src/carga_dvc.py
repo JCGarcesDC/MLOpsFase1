@@ -1,5 +1,6 @@
 import subprocess, shlex, sys
 from pathlib import Path
+import os
 
 def run(cmd: str):
     p = subprocess.run(shlex.split(cmd), capture_output=True, text=True)
@@ -15,7 +16,7 @@ def save_csv_and_push(df, file_path="../data/obesity_estimation_cleaned.csv", co
     
     # 1. Añadir archivos para el commit
     run(f'dvc add "{p.as_posix()}"')
-    run(f'git add "{p.as_posix()}" "{p.as_posix()}.dvc"')
+    run(f'git add "{p.as_posix()}.dvc"')
 
     # 2. Hacer commit (si hay cambios)
     try:
