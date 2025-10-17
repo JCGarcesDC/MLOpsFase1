@@ -2,3 +2,6 @@
     remote = storage
 ['remote "storage"']
     url = https://github.com/JCGarcesDC/ObesityEstimation53.git
+    remote = gcs
+[remote "gcs"]
+    url = gs://obesityestimation-mna-mlops-53
