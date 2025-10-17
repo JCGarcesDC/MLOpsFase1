@@ -1,0 +1,4 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = d:\OneDrive\Escritorio\Maestria IA\Trimestre 4\MLOps\Git_Local\ObesityMine53\dvc_remote
