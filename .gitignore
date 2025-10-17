@@ -40,6 +40,7 @@ models/*
 
 # Credentials
 /config/credentials.yaml
+.dvc/*.json
 
 # DVC
 .dvc/
