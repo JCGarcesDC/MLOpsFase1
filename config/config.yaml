@@ -1,0 +1,47 @@
+# Databricks Configurations
+databricks:
+  workspace_url: "https://YOUR_WORKSPACE.cloud.databricks.com"
+  cluster_id: "YOUR_CLUSTER_ID"
+  job_cluster:
+    spark_version: "13.3.x-cpu-ml-scala2.12"
+    node_type_id: "Standard_DS3_v2"
+    num_workers: 2
+    
+# MLflow Settings
+mlflow:
+  experiment_name: "obesity_prediction"
+  model_name: "obesity_classifier"
+  tracking_uri: "sqlite:///mlflow.db"  # For local development
+  # tracking_uri: "databricks"  # When using Databricks
+
+# Data Paths
+data:
+  raw: "data/raw"
+  processed: "data/processed"
+  interim: "data/interim"
+  
+# Model Settings
+model:
+  random_state: 42
+  test_size: 0.2
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+    
+# Training Parameters
+training:
+  cv_folds: 5
+  hyperparameter_tuning:
+    n_trials: 100
+    timeout: 3600  # 1 hour
+    
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Environment
+env:
+  prod: false  # Set to true for production environment

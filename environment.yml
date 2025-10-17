@@ -1,0 +1,57 @@
+name: obesitymine
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  # Data Science & ML
+  - numpy
+  - pandas
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  - catboost
+  - optuna
+  - shap
+  
+  # Visualization
+  - matplotlib
+  - seaborn
+  - plotly
+  
+  # Jupyter
+  - jupyter
+  - notebook
+  - ipykernel
+  - nbconvert
+  
+  # MLOps
+  - mlflow>=2.7.0
+  - great-expectations
+  - pytest
+  - black
+  - flake8
+  - isort
+  - pre-commit
+  
+  # Utilities
+  - python-dotenv
+  - hydra-core
+  - pyyaml
+  - joblib
+  - tqdm
+  - pip
+  
+  - pip:
+    # Databricks
+    - databricks-cli
+    - databricks-connect
+    # Additional MLOps
+    - dvc
+    - pytest-cov
+    - black[jupyter]
+    # API & Serving
+    - fastapi
+    - uvicorn
+    - streamlit
