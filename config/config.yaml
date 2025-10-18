@@ -45,3 +45,10 @@ logging:
 # Environment
 env:
   prod: false  # Set to true for production environment
+  dvc_remote_gcs:
+    bucket: "obesityestimation-mna-mlops-53"
+    url: "gs://obesityestimation-mna-mlops-53/files"
+    credentialpath: ".dvc/obesityestimation-mna-mlops-53-5118ae1196dd.json"
+    project_id: "obesityestimation-mna-mlops-53"
+    client_email: "dvc-storage-mna-mlops-53@obesityestimation-mna-mlops-53.iam.gserviceaccount.com"
+    description: "Configuración para DVC remoto en Google Cloud Storage."
